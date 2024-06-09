@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
+//import 'package:flutter_app_ferresft/ui/views/customer/CustomerPage.dart';
+import 'package:flutter_app_ferresft/ui/views/home/Home.dart';
 import 'package:get/get.dart';
 
 import 'package:flutter_app_ferresft/widgets/Header.dart';
 // import 'package:flutter_app_ferresft/widgets/ListText.dart';
 // TESTING LIST VIEW WITH TARGETS (CARDS)
-import 'package:flutter_app_ferresft/widgets/ListView.dart';
+//import 'package:flutter_app_ferresft/widgets/ListView.dart';
+// import 'package:flutter_app_ferresft/widgets/ListsProduct.dart';
 import 'package:flutter_app_ferresft/ui/views/login/SignUp_view.dart';
 import 'package:flutter_app_ferresft/widgets/Logo.dart';
 import 'package:flutter_app_ferresft/widgets/TextFieldCustom.dart';
@@ -137,7 +140,7 @@ class ButtonSignIn extends StatelessWidget {
             color: GlobalColors.btnColor1,
             borderRadius: const BorderRadius.all(Radius.circular(50))),
         child: TextButton(
-          onPressed: () => {Get.to(ListViewTarget())},
+          onPressed: () => { Get.to(Home())},
           child: const Text(
             'SIGN IN',
             style: TextStyle(
