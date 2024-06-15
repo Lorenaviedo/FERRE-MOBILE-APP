@@ -13,12 +13,12 @@ class SplashView extends StatelessWidget {
       Get.to(const LoginView());
     });
     return Scaffold(
-      backgroundColor: GlobalColors.primaryColor,
-      body: const Center(
-        child: Text(
-          'Logo',
-          style: TextStyle(
-              color: Colors.white, fontSize: 30, fontWeight: FontWeight.bold),
+      backgroundColor: GlobalColors.thirdColor,
+      body: Center(
+        child: Image.asset(
+          'assets/images/logo.png',
+          width: 200,
+          height: 200,
         ),
       ),
     );

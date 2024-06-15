@@ -5,6 +5,7 @@ import 'package:flutter_app_ferresft/widgets/Logo.dart';
 
 import '../../../utils/Global.colors.dart';
 import '../../../widgets/TextFieldCustom.dart';
+import 'package:get/get.dart';
 
 class SignUpView extends StatelessWidget {
   const SignUpView({super.key});
@@ -22,6 +23,7 @@ class SignUpView extends StatelessWidget {
           Title(),
           TextFields(),
           ButtonSignUp(),
+          SubTitle(),
         ]));
   }
 }
@@ -84,8 +86,8 @@ class TextFields  extends StatelessWidget {
           TextFieldCustom(
             type: TextInputType.text, 
             icon: Icons.person_outline, 
-            label: 'User', 
-            hint: 'Enter Username'
+            label: 'Nombre de usuario', 
+            hint: 'Ingrese nombre de usuario'
           ),
           const SizedBox(
             height: 20,
@@ -93,8 +95,8 @@ class TextFields  extends StatelessWidget {
           TextFieldCustom(
             type: TextInputType.emailAddress, 
             icon: Icons.email_outlined, 
-            label: 'Email', 
-            hint: 'Enter your Email'
+            label: 'Correo electrónico', 
+            hint: 'Ingresar el correo electrónico'
           ),
           const SizedBox(
             height: 20,
@@ -102,8 +104,8 @@ class TextFields  extends StatelessWidget {
           TextFieldCustom(
             type: TextInputType.phone, 
             icon: Icons.phone_outlined, 
-            label: 'Phone', 
-            hint: 'Enter phone number'
+            label: 'Número de celular', 
+            hint: 'Ingresar número de celular'
           ),
           const SizedBox(
             height: 20,
@@ -111,8 +113,8 @@ class TextFields  extends StatelessWidget {
           TextFieldCustom(
             type: TextInputType.visiblePassword, 
             icon: Icons.password_outlined,  
-            label: 'Password', 
-            hint: 'Enter Password'
+            label: 'Contraseña', 
+            hint: 'Ingresar una contraseña'
           ),
           const SizedBox(
             height: 20,
@@ -134,7 +136,7 @@ class ButtonSignUp extends StatelessWidget {
       margin: const EdgeInsets.all(25),
       decoration: BoxDecoration(
         color: GlobalColors.primaryColor,
-        borderRadius: const BorderRadius.all(Radius.circular(50))
+        borderRadius: const BorderRadius.all(Radius.circular(6))
       ),
       child: TextButton(
         onPressed: () => {},
@@ -148,6 +150,41 @@ class ButtonSignUp extends StatelessWidget {
           )
         )
       )
+    );
+  }
+}
+
+// ------------------- SECOND TITLE
+class SubTitle extends StatelessWidget {
+  const SubTitle({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.all(15.0),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          const Text(
+            '¿Tienes cuenta?',
+            style: TextStyle(fontSize: 18),
+          ),
+          TextButton(
+            onPressed: () {
+              Get.to(const LoginView());
+            },
+            child: const Text(
+              'INICIA SESION',
+              style: TextStyle(
+                  fontSize: 18,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.blue,
+                  //decoration: TextDecoration.underline,
+              ),
+            ),
+          )
+        ],
+      ),
     );
   }
 }
