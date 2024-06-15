@@ -9,19 +9,18 @@ class LogoHeader extends StatelessWidget {
       top: 80,
       left: MediaQuery.of(context).size.width * 0.38,
       child: Container(
-        height: 80,
-        width: 80,
+        height: 100,
+        width: 100,
         decoration: BoxDecoration(
-            color: Colors.white,
-            borderRadius: BorderRadius.circular(50),
-            boxShadow: const [
-              BoxShadow(blurRadius: 10, color: Colors.black26)
-            ]),
-        child: const Align(
+            // color: Colors.white,
+            borderRadius: BorderRadius.circular(20),
+        ),
+        child: Align(
           alignment: Alignment.center,
-          child: Text(
-            'FRAVE',
-            style: TextStyle(fontSize: 21, fontWeight: FontWeight.bold),
+          child: Image.asset(
+            'assets/images/logo.png', 
+            width: 100,
+            height: 100,
           ),
         ),
       ),

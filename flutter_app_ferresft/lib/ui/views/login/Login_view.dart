@@ -38,6 +38,7 @@ class LoginView extends StatelessWidget {
             height: 40,
           ),
           ButtonSignIn(),
+          SubTitle(),
         ],
       ),
     );
@@ -80,6 +81,41 @@ class Title extends StatelessWidget {
   }
 }
 
+// ------------------- SECOND TITLE
+class SubTitle extends StatelessWidget {
+  const SubTitle({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.all(15.0),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          const Text(
+            '¿No tienes cuenta?',
+            style: TextStyle(fontSize: 18),
+          ),
+          TextButton(
+            onPressed: () {
+              Get.to(const SignUpView());
+            },
+            child: const Text(
+              'REGISTRATE',
+              style: TextStyle(
+                  fontSize: 18,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.blue,
+                  //decoration: TextDecoration.underline,
+              ),
+            ),
+          )
+        ],
+      ),
+    );
+  }
+}
+
 // -----------------------------------------------
 class EmailAndPassword extends StatelessWidget {
   const EmailAndPassword({super.key});
@@ -93,8 +129,8 @@ class EmailAndPassword extends StatelessWidget {
           TextFieldCustom(
             type: TextInputType.emailAddress,
             icon: Icons.email_outlined,
-            label: 'Email',
-            hint: 'Enter email address',
+            label: 'Correo electrónico',
+            hint: 'Ingresa tu correo electrónico',
           ),
           const SizedBox(
             height: 40,
@@ -102,8 +138,8 @@ class EmailAndPassword extends StatelessWidget {
           TextFieldCustom(
             type: TextInputType.visiblePassword,
             icon: Icons.password_outlined,
-            label: 'Password',
-            hint: 'Enter your password',
+            label: 'Contraseña',
+            hint: 'Ingresa tu contraseña',
             pass: true,
           ),
         ],
@@ -122,7 +158,7 @@ class ForgotPassword extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.only(right: 25, top: 25),
       alignment: Alignment.centerRight,
-      child: const Text('Forgot your Password?'),
+      child: const Text('¿Olvidaste tu contraseña?'),
     );
   }
 }
@@ -138,11 +174,11 @@ class ButtonSignIn extends StatelessWidget {
         margin: const EdgeInsets.all(25),
         decoration: BoxDecoration(
             color: GlobalColors.btnColor1,
-            borderRadius: const BorderRadius.all(Radius.circular(50))),
+            borderRadius: const BorderRadius.all(Radius.circular(6))),
         child: TextButton(
           onPressed: () => { Get.to(Home())},
           child: const Text(
-            'SIGN IN',
+            'INICIAR SESIÓN',
             style: TextStyle(
                 height: 3.1,
                 fontSize: 18,
