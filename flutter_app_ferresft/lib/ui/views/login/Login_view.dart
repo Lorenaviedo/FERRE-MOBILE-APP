@@ -1,15 +1,10 @@
 import 'package:flutter/material.dart';
-//import 'package:flutter_app_ferresft/ui/views/customer/CustomerPage.dart';
 import 'package:flutter_app_ferresft/ui/views/home/Home.dart';
 import 'package:get/get.dart';
 
 import 'package:flutter_app_ferresft/widgets/Header.dart';
-// import 'package:flutter_app_ferresft/widgets/ListText.dart';
-// TESTING LIST VIEW WITH TARGETS (CARDS)
-//import 'package:flutter_app_ferresft/widgets/ListView.dart';
-// import 'package:flutter_app_ferresft/widgets/ListsProduct.dart';
 import 'package:flutter_app_ferresft/ui/views/login/SignUp_view.dart';
-import 'package:flutter_app_ferresft/widgets/Logo.dart';
+//import 'package:flutter_app_ferresft/widgets/Logo.dart';
 import 'package:flutter_app_ferresft/widgets/TextFieldCustom.dart';
 import '../../../utils/global.colors.dart';
 
@@ -24,18 +19,24 @@ class LoginView extends StatelessWidget {
         padding: const EdgeInsets.only(top: 0),
         physics: const BouncingScrollPhysics(),
         children: const [
+          SizedBox(
+            height: 80,
+          ),
           Stack(children: [
             HeaderLogin(),
-            LogoHeader(),
+            //LogoHeader(),
           ]),
+          SizedBox(
+            height: 20,
+          ),
           Title(),
           SizedBox(
-            height: 40,
+            height: 10,
           ),
           EmailAndPassword(),
           ForgotPassword(),
           SizedBox(
-            height: 40,
+            height: 30,
           ),
           ButtonSignIn(),
           SubTitle(),
@@ -51,30 +52,15 @@ class Title extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(15.0),
+    return const Padding(
+      padding: EdgeInsets.all(15.0),
       child: Row(
-        children: [
-          const Text(
-            'SIGN IN',
-            style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+        mainAxisAlignment: MainAxisAlignment.center,
+        children:[
+          Text(
+            'Inicia Sesión',
+            style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
           ),
-          const Text(
-            '/',
-            style: TextStyle(fontSize: 25, color: Colors.grey),
-          ),
-          TextButton(
-            onPressed: () {
-              Get.to(const SignUpView());
-            },
-            child: const Text(
-              'SIGN UP',
-              style: TextStyle(
-                  fontSize: 18,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.grey),
-            ),
-          )
         ],
       ),
     );
@@ -101,7 +87,7 @@ class SubTitle extends StatelessWidget {
               Get.to(const SignUpView());
             },
             child: const Text(
-              'REGISTRATE',
+              'Registrate',
               style: TextStyle(
                   fontSize: 18,
                   fontWeight: FontWeight.bold,
@@ -133,7 +119,7 @@ class EmailAndPassword extends StatelessWidget {
             hint: 'Ingresa tu correo electrónico',
           ),
           const SizedBox(
-            height: 40,
+            height: 10,
           ),
           TextFieldCustom(
             type: TextInputType.visiblePassword,
@@ -158,7 +144,10 @@ class ForgotPassword extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.only(right: 25, top: 25),
       alignment: Alignment.centerRight,
-      child: const Text('¿Olvidaste tu contraseña?'),
+      child: const Text(
+        '¿Olvidaste tu contraseña?',
+        style: TextStyle(color: Colors.blue),
+      ),
     );
   }
 }
