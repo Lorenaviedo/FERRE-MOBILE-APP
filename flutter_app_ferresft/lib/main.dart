@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app_ferresft/ui/views/home/Home_Screen.dart';
 import 'package:flutter_app_ferresft/utils/Global.colors.dart';
 import 'package:get/get.dart';
-import 'package:flutter_app_ferresft/ui/views/splash/Splash_view.dart';
+//import 'package:flutter_app_ferresft/ui/views/splash/Splash_view.dart';
 
 void main() {
   runApp(const MainApp());
@@ -19,7 +20,8 @@ class MainApp extends StatelessWidget {
         primarySwatch: Colors.blue, 
         scaffoldBackgroundColor: GlobalColors.thirdColor
       ),
-      home: const SplashView(),
+      //home: const SplashView(),
+      home: const HomeScreen()
     );
   }
 }
