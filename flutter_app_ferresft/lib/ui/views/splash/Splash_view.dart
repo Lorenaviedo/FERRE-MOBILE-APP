@@ -17,7 +17,7 @@ class SplashView extends StatelessWidget {
       body: Center(
         child: Image.asset(
           'assets/images/logo.png',
-          width: 200,
+          width: 300,
           height: 200,
         ),
       ),
