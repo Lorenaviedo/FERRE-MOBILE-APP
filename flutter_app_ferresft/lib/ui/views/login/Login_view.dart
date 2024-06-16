@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_app_ferresft/ui/views/home/Home.dart';
+import 'package:flutter_app_ferresft/widgets/BottomNavBar.dart';
 import 'package:get/get.dart';
 
 import 'package:flutter_app_ferresft/widgets/Header.dart';
 import 'package:flutter_app_ferresft/ui/views/login/SignUp_view.dart';
-//import 'package:flutter_app_ferresft/widgets/Logo.dart';
 import 'package:flutter_app_ferresft/widgets/TextFieldCustom.dart';
 import '../../../utils/global.colors.dart';
 
@@ -165,7 +164,7 @@ class ButtonSignIn extends StatelessWidget {
             color: GlobalColors.btnColor1,
             borderRadius: const BorderRadius.all(Radius.circular(6))),
         child: TextButton(
-          onPressed: () => { Get.to(Home())},
+          onPressed: () => { Get.to(const BottomNavbar())},
           child: const Text(
             'INICIAR SESIÓN',
             style: TextStyle(

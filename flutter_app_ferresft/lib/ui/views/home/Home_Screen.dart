@@ -32,6 +32,7 @@ class HomeScreenState extends State<HomeScreen> {
     return Scaffold(
       appBar: AppBar(
         title: Text('HTTP REQUEST $pokemonId'),
+        automaticallyImplyLeading: false,
       ),
       body: Center(
         child: Card(
