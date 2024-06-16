@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+// import 'package:flutter_app_ferresft/ui/views/home/Home_Screen.dart';
+import 'package:flutter_app_ferresft/utils/Global.colors.dart';
 import 'package:get/get.dart';
 import 'package:flutter_app_ferresft/ui/views/splash/Splash_view.dart';
 
@@ -11,10 +13,15 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const GetMaterialApp(
+    return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Flutter Ferre App',
-      home: SplashView(),
+      theme: ThemeData(
+        primarySwatch: Colors.blue, 
+        scaffoldBackgroundColor: GlobalColors.thirdColor
+      ),
+      home: const SplashView(),
+      //home: const HomeScreen()
     );
   }
 }

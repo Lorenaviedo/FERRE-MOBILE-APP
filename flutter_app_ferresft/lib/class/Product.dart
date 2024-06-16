@@ -11,21 +11,21 @@ class ProductList {
 
   static List<ProductList> productList() {
     return [
-      ProductList('Taladro electrico', 'images/taladro-img1.jpg', 'Herramienta electrica'),
-      ProductList('Martillo electrico', 'images/martillo-img2.jpg', 'Herramienta electrica'),
-      ProductList('Pulidora', 'images/martillodemoledor-img3.jpg', 'Herramienta electrica'),
-      ProductList('Caladora', 'images/taladro-img4.jpg', 'Herramienta electrica'),
-      ProductList('Hombre solo', 'images/urrea-img5.jpg', 'Herramienta electrica'),
-      ProductList('Alicate', 'images/taladro-img1.jpg', 'Herramienta electrica'),
-      ProductList('Prensa', 'images/martillo-img2.jpg', 'Herramienta electrica'),
-      ProductList('Llaves', 'images/martillodemoledor-img3.jpg', 'Herramienta electrica'),
-      ProductList('Remachadora', 'images/taladro-img4.jpg', 'Herramienta electrica'),
-      ProductList('Destornillador', 'images/urrea-img5.jpg', 'Herramienta electrica'),
-      ProductList('Calibradores', 'images/taladro-img1.jpg', 'Herramienta electrica'),
-      ProductList('Hidrometro', 'images/martillo-img2.jpg', 'Herramienta electrica'),
-      ProductList('Lima en cruz', 'images/martillodemoledor-img3.jpg', 'Herramienta electrica'),
-      ProductList('Aceitera', 'images/taladro-img4.jpg', 'Herramienta electrica'),
-      ProductList('Tornillos cortos', 'images/urrea-img5.jpg', 'Herramienta electrica'),
+      ProductList('Taladro electrico', 'assets/images/taladro-img1.jpg', 'Herramienta electrica'),
+      ProductList('Martillo electrico', 'assets/images/martillo-img2.jpg', 'Herramienta electrica'),
+      ProductList('Pulidora', 'assets/images/martillodemoledor-img3.jpg', 'Herramienta electrica'),
+      ProductList('Caladora', 'assets/images/taladro-img4.jpg', 'Herramienta electrica'),
+      ProductList('Hombre solo', 'assets/images/urrea-img5.jpg', 'Herramienta electrica'),
+      ProductList('Alicate', 'assets/images/taladro-img1.jpg', 'Herramienta electrica'),
+      ProductList('Prensa', 'assets/images/martillo-img2.jpg', 'Herramienta electrica'),
+      ProductList('Llaves', 'assets/images/martillodemoledor-img3.jpg', 'Herramienta electrica'),
+      ProductList('Remachadora', 'assets/images/taladro-img4.jpg', 'Herramienta electrica'),
+      ProductList('Destornillador', 'assets/images/urrea-img5.jpg', 'Herramienta electrica'),
+      ProductList('Calibradores', 'assets/images/taladro-img1.jpg', 'Herramienta electrica'),
+      ProductList('Hidrometro', 'assets/images/martillo-img2.jpg', 'Herramienta electrica'),
+      ProductList('Lima en cruz', 'assets/images/martillodemoledor-img3.jpg', 'Herramienta electrica'),
+      ProductList('Aceitera', 'assets/images/taladro-img4.jpg', 'Herramienta electrica'),
+      ProductList('Tornillos cortos', 'assets/images/urrea-img5.jpg', 'Herramienta electrica'),
     ];
   }  
 }

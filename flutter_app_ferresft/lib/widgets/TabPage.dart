@@ -2,7 +2,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app_ferresft/ui/views/customer/CustomerPage.dart';
 import 'package:flutter_app_ferresft/ui/views/login/Login_view.dart';
-import 'package:flutter_app_ferresft/ui/views/user/UserPage.dart';
 
 class TabPage extends StatefulWidget {
   const TabPage({super.key});
@@ -59,7 +58,7 @@ class TabPageState extends State<TabPage> with SingleTickerProviderStateMixin {
       ),
       body: TabBarView(
         controller: tabController,
-        children: const [CustomerPage(), UserPage(), LoginView()],
+        children: const [CustomerPage(), CustomerPage(), LoginView()],
       )
     );
   }

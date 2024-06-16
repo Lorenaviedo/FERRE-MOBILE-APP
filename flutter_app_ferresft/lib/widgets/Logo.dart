@@ -6,21 +6,21 @@ class LogoHeader extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Positioned(
-      top: 80,
+      top: 300,
       left: MediaQuery.of(context).size.width * 0.38,
       child: Container(
-        height: 100,
-        width: 100,
+        height: 500,
+        width: 500,
         decoration: BoxDecoration(
-            // color: Colors.white,
-            borderRadius: BorderRadius.circular(20),
+            //color: Colors.black,
+            borderRadius: BorderRadius.circular(0),
         ),
         child: Align(
           alignment: Alignment.center,
           child: Image.asset(
             'assets/images/logo.png', 
-            width: 100,
-            height: 100,
+            width: 400,
+            height: 300,
           ),
         ),
       ),
