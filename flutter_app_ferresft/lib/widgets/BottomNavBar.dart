@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app_ferresft/ui/views/customer/FavoritePage.dart';
+import 'package:flutter_app_ferresft/ui/views/home/HomeInterface.dart';
 import 'package:flutter_app_ferresft/ui/views/home/Home_Screen.dart';
 import 'package:flutter_app_ferresft/ui/views/user/UserProfile.dart';
-import 'package:flutter_app_ferresft/widgets/AppNavbar.dart';
 import 'package:get/get.dart';
 
 class BottomNavbar extends StatelessWidget {
@@ -22,7 +22,6 @@ class BottomNavbar extends StatelessWidget {
             NavigationDestination(icon: Icon(Icons.home), label: 'Home'),
             NavigationDestination(icon: Icon(Icons.person), label: 'Profile'),
             NavigationDestination(icon: Icon(Icons.favorite), label: 'Wishlist'),
-            NavigationDestination(icon: Icon(Icons.store), label: 'Store'),
             NavigationDestination(
                 icon: Icon(Icons.percent_rounded), label: 'Offers'),
           ],
@@ -37,10 +36,9 @@ class NavigationController extends GetxController {
   final Rx<int> selectedIndex = 0.obs;
 
   final screens = [
-    Container(color: Colors.orange), 
+    const HomeInterface(),
     const UserProfile(), 
     const WishListPage(), 
-    const AppNavbar(),
     const HomeScreen(), 
   ];
 }
