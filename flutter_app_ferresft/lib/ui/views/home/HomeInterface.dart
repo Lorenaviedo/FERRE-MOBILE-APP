@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_app_ferresft/utils/Global.colors.dart';
 import 'package:flutter_app_ferresft/utils/ImageString.dart';
+import 'package:flutter_app_ferresft/widgets/containers/product_cards/grid/gridCardProduct.dart';
 import 'package:flutter_app_ferresft/widgets/home/PromoSlider.dart';
+import 'package:flutter_app_ferresft/widgets/texts/categoriesHeading.dart';
 
 class HomeInterface extends StatelessWidget {
   const HomeInterface({super.key});
@@ -23,60 +24,65 @@ class HomeInterface extends StatelessWidget {
         centerTitle: true,
         titleTextStyle: const TextStyle(
             color: Colors.white, fontSize: 20, fontWeight: FontWeight.bold),
-        backgroundColor: const Color.fromARGB(255, 255, 167, 52),
+        backgroundColor: GlobalColors.primaryColor,
         actions: <Widget>[
-          IconButton(
-            icon: const Icon(Icons.shopping_cart),
-            color: Colors.white,
-            tooltip: 'Show Shopping Cart',
-            onPressed: () {
-              ScaffoldMessenger.of(context).showSnackBar(
-                  const SnackBar(content: Text('0 Products in your cart')));
-            },
-          ),
+          Padding(
+            padding: const EdgeInsets.only(right: 12),
+            child: IconButton(
+              icon: const Icon(Icons.shopping_cart),
+              color: Colors.white,
+              tooltip: 'Show Shopping Cart',
+              onPressed: () {
+                ScaffoldMessenger.of(context).showSnackBar(
+                    const SnackBar(content: Text('0 Products in your cart')));
+              },
+            ),
+          )
         ],
-        bottom: const PreferredSize(
+        bottom: PreferredSize(
           //backgroundColor: const Color.fromARGB(255, 255, 167, 52),
-          preferredSize: Size.fromHeight(70),
-          child: Padding(
-            padding: EdgeInsets.all(12.0),
-            child: TextField(
-              decoration: InputDecoration(
-                contentPadding: EdgeInsets.symmetric(vertical: 12.0),
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.all(Radius.circular(20)),
-                  borderSide: BorderSide.none,
+          preferredSize: const Size.fromHeight(80),
+          child: Container(
+            color: Colors.black, // Establecer el color de fondo negro
+            child: const Padding(
+              padding: EdgeInsets.all(16.0),
+              child: TextField(
+                decoration: InputDecoration(
+                  contentPadding: EdgeInsets.symmetric(vertical: 12.0),
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.all(Radius.circular(20)),
+                    borderSide: BorderSide.none,
+                  ),
+                  hintText: 'Busca tus productos',
+                  prefixIcon: Icon(Icons.search),
+                  filled: true,
+                  fillColor: Colors.white,
                 ),
-                hintText: 'Busca tus productos',
-                prefixIcon: Icon(Icons.search),
-                // suffixIcon: IconButton(
-                //   icon: Icon(Icons.clear),
-                //   onPressed: () {},
-                // ),
-                filled: true,
-                fillColor: Colors.white,
               ),
             ),
-            )
+          ),
         ),
       ),
       body:  SingleChildScrollView(
         child: Column(
           children: [
-            const SizedBox(height: 20,),
-            const Text('Marcas', style: TextStyle(fontSize: 15)),
+            const SizedBox(height: 18,),
+            const CategoriesHeading(title: 'Nuestras Marcas', showActionButton: false,),
             const Padding(
-              padding: EdgeInsets.all(25),
+              padding: EdgeInsets.all(20),
               child: FPromoSlider(),
-              // child: BImageRounded(imageUrl: StrImages.promoBannerBosch,)
             ),
-            const SizedBox(height: 20,),
+            const SizedBox(height: 15,),
+            const CategoriesHeading(title: 'Recomendados', showActionButton: false,),
+            // FProductCardVertical(),
+            // card products vertical
+            GridCardProduct(),
+            const SizedBox(height: 15,),
             Padding(
-              padding: const EdgeInsets.only(left: 10),
+              padding: const EdgeInsets.only(left: 0),
               child: Column(
                 children: [
-                  const Text('Categorias', style: TextStyle(fontSize: 15, overflow: TextOverflow.ellipsis),),
-                  // TextButton(onPressed: (){}, child: Text('ButtonTitle'))
+                  const CategoriesHeading(title: 'Categorias', showActionButton: false,),
                   const SizedBox(height: 20,),
                   // LisyView
                   SizedBox(
@@ -86,9 +92,13 @@ class HomeInterface extends StatelessWidget {
                       itemCount: 6,
                       scrollDirection: Axis.horizontal,
                       itemBuilder: (_, index) {
-                        return HorizontalListView(image: StrImages.category1, title: 'Herramienta Manual', onTap: (){},);
-                    },
-                  )
+                        return HorizontalListView(
+                          image: StrImages.category1, 
+                          title: 'Herramienta Manual', 
+                          onTap: (){},
+                        );
+                      },
+                    )
                   ),
                 ],
               ),
@@ -116,7 +126,7 @@ class HorizontalListView extends StatelessWidget {
     return GestureDetector(
       onTap: onTap,
       child: Padding(
-        padding: const EdgeInsets.only(right: 10),
+        padding: const EdgeInsets.only(right: 16.0),
         child: Column(
           children: [
             Container(
@@ -124,8 +134,12 @@ class HorizontalListView extends StatelessWidget {
               height: 56,
               padding: const EdgeInsets.all(10),
               decoration: BoxDecoration(
-                color: GlobalColors.primaryColor,
+                color: GlobalColors.thirdColor,
                 borderRadius: BorderRadius.circular(100),
+                border: Border.all(
+                  color: GlobalColors.borderColor5,
+                  width: 1,
+                )
               ),
               child: Center(
                 child: Image(image: AssetImage(image), fit: BoxFit.cover,),
@@ -133,7 +147,7 @@ class HorizontalListView extends StatelessWidget {
           ),
           const SizedBox(height: 5,),
           SizedBox(
-            width: 50, 
+            width: 55, 
             child: 
               Text(
               title, 

@@ -11,7 +11,7 @@ class BImageRounded extends StatelessWidget {
     this.applyImageRadius = true,
     required this.imageUrl,
     this.fit = BoxFit.cover,
-    this.backgroundColor = Colors.lightBlue,
+    //this.backgroundColor = Colors.lightBlue,
     this.isNetworkImage = false,
     this.borderRadius = 10,
   });
@@ -20,7 +20,7 @@ class BImageRounded extends StatelessWidget {
   final String imageUrl;
   final bool applyImageRadius;
   final BoxBorder? border;
-  final Color backgroundColor;
+  // final Color backgroundColor;
   final BoxFit? fit;
   final EdgeInsetsGeometry? padding;
   final bool isNetworkImage;
@@ -37,7 +37,7 @@ class BImageRounded extends StatelessWidget {
         padding: padding,
         decoration: BoxDecoration(
           border: border,
-          color: backgroundColor,
+          // color: backgroundColor,
           borderRadius: BorderRadius.circular(borderRadius),
         ),
         child: ClipRRect(
