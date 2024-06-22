@@ -13,7 +13,7 @@ class GlobalColors {
   static Color textColor2 = const Color.fromRGBO(0, 0, 0, 0.6);
 
   // Icon colors:
-  static Color iconColor1 = const Color.fromRGBO(255, 188, 4, 0.06);
+  static Color iconBgColor1 = const Color.fromRGBO(255, 188, 4, 0.06);
   static Color iconColorSolid1 = const Color.fromRGBO(232, 39, 39, 1);
   static Color iconColorSolid2 = const Color.fromRGBO(27, 143, 46, 1);
 

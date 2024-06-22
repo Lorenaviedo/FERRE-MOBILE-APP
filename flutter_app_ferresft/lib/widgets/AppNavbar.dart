@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app_ferresft/utils/Global.colors.dart';
 
 class AppNavbar extends StatelessWidget {
   const AppNavbar({super.key});
@@ -19,7 +20,7 @@ class AppNavbar extends StatelessWidget {
         centerTitle: true,
         titleTextStyle: const TextStyle(
             color: Colors.white, fontSize: 20, fontWeight: FontWeight.bold),
-        backgroundColor: const Color.fromARGB(255, 255, 167, 52),
+        backgroundColor: GlobalColors.primaryColor,
         actions: <Widget>[
           IconButton(
             icon: const Icon(Icons.shopping_cart),
