@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_app_ferresft/utils/Global.colors.dart';
 import 'package:flutter_app_ferresft/widgets/accountContainerData/AccountContainer2.dart';
 import 'package:flutter_app_ferresft/widgets/accountContainerData/AccountData.dart';
-import 'package:flutter_app_ferresft/widgets/texts/categoriesHeading.dart';
 
 class UserProfile extends StatelessWidget {
   const UserProfile({super.key});

@@ -2,7 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_app_ferresft/ui/views/customer/FavoritePage.dart';
 import 'package:flutter_app_ferresft/ui/views/home/HomeInterface.dart';
 import 'package:flutter_app_ferresft/ui/views/home/Home_Screen.dart';
+import 'package:flutter_app_ferresft/ui/views/home/test_products.dart';
 import 'package:flutter_app_ferresft/ui/views/user/UserProfile.dart';
+import 'package:flutter_app_ferresft/utils/global.colors.dart';
+import 'package:flutter_app_ferresft/widgets/containers/product_cards/details/ProductDetailsView.dart';
 import 'package:get/get.dart';
 
 class BottomNavbar extends StatelessWidget {
@@ -14,20 +17,48 @@ class BottomNavbar extends StatelessWidget {
 
     return Scaffold(
       bottomNavigationBar: Obx(
-        () => NavigationBar(
-          elevation: 0,
-          selectedIndex: controller.selectedIndex.value,
-          onDestinationSelected: (index) => controller.selectedIndex.value = index,
-          destinations: const [
-            NavigationDestination(icon: Icon(Icons.home), label: 'Home'),
-            NavigationDestination(icon: Icon(Icons.person), label: 'Profile'),
-            NavigationDestination(icon: Icon(Icons.favorite), label: 'Wishlist'),
-            NavigationDestination(
-                icon: Icon(Icons.percent_rounded), label: 'Offers'),
-          ],
+        () => Container(
+          height: 85,
+          //padding: EdgeInsets.only(top: 10, bottom: 10),
+          decoration: BoxDecoration(
+            color: Colors.white,
+            border: Border(
+              top: BorderSide(
+                color: GlobalColors.primaryColor, // Color naranja
+                width: 1, // Grosor del borde
+              ),
+            ),
+          ),
+          child: BottomNavigationBar(
+            currentIndex: controller.selectedIndex.value,
+            onTap: (index) => controller.selectedIndex.value = index,
+            backgroundColor: GlobalColors.thirdColor, // Fondo blanco
+            selectedItemColor: Colors.black, // Iconos seleccionados en negro
+            unselectedItemColor: Colors.black54, // Iconos no seleccionados en gris
+            showSelectedLabels: true,
+            showUnselectedLabels: true,
+            items: const [
+              BottomNavigationBarItem(
+                icon: Icon(Icons.home),
+                label: 'Inicio',
+              ),
+              BottomNavigationBarItem(
+                icon: Icon(Icons.person),
+                label: 'Cuenta',
+              ),
+              BottomNavigationBarItem(
+                icon: Icon(Icons.favorite),
+                label: 'Favoritos',
+              ),
+              BottomNavigationBarItem(
+                icon: Icon(Icons.percent_rounded),
+                label: 'Ofertas',
+              ),
+            ],
+          ),
         ),
       ),
-      body: Obx(() => controller.screens[controller.selectedIndex.value ]),
+      body: Obx(() => controller.screens[controller.selectedIndex.value]),
     );
   }
 }
@@ -37,8 +68,9 @@ class NavigationController extends GetxController {
 
   final screens = [
     const HomeInterface(),
-    const UserProfile(), 
-    const WishListPage(), 
-    const HomeScreen(), 
+    const UserProfile(),
+    const WishListPage(),
+    const TestScreen(),
+    // const ProductDetailView(),
   ];
 }
