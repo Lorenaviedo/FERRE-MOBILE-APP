@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app_ferresft/ui/views/customer/FavoritePage.dart';
 import 'package:flutter_app_ferresft/ui/views/home/HomeInterface.dart';
-import 'package:flutter_app_ferresft/ui/views/home/Home_Screen.dart';
 import 'package:flutter_app_ferresft/ui/views/home/test_products.dart';
 import 'package:flutter_app_ferresft/ui/views/user/UserProfile.dart';
 import 'package:flutter_app_ferresft/utils/global.colors.dart';
-import 'package:flutter_app_ferresft/widgets/containers/product_cards/details/ProductDetailsView.dart';
 import 'package:get/get.dart';
 
 class BottomNavbar extends StatelessWidget {
